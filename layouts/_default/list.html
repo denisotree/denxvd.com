@@ -1,0 +1,30 @@
+
+{{ define "main" }}
+<section>
+  {{ with .Title -}}<h1>{{- . -}}</h1>{{- end }}
+  {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
+  <ul class="posts-list">
+    {{ range where .Paginator.Pages "Type" "!=" "page" }}
+    <li class="posts-list-item">
+      <a class="posts-list-item-link" href="{{ .Permalink }}">
+        {{with .Params.featured_image}}
+        <div class="posts-list-item-thumbnail" style="background-image: url('{{ . }}')"></div>
+        {{ end }}
+        <div class="post-list-item-container">
+          <span class="posts-list-item-title">{{ .Title }}</span> 
+          <span class="posts-list-item-description">
+            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+            {{ .PublishDate.Format "Jan 2, 2006" }}
+            <span class="posts-list-item-separator">-</span>
+            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+            {{ .ReadingTime }} min read
+          </span>
+          <span class="posts-list-item-summary">{{ .Params.summary }}</span>
+        </div>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ partial "pagination.html" $ }}
+</section>
+{{ end }}

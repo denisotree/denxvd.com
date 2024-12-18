@@ -1,0 +1,176 @@
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+html, body, p, a, pre, code, div, span, h1, h2, h3, h4, hr, .app-header-title {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #D3C6AA;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+code {
+  background-color: #272822;
+  padding: 0.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2D353B;
+  color: #D3C6AA;
+
+  th, td {
+    border: 2px solid #4D4C43;
+    padding: 0.3rem;
+    text-align: left;
+  }
+
+  th {
+    background-color: #232A2E;
+    text-transform: uppercase;
+  }
+}
+
+
+article {
+  a {
+    text-decoration: underline;
+  }
+}
+
+.error-404 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app-container {
+  margin-left: 25rem;
+  @media screen and (max-width: 1080px) {
+    margin-left: 0;
+  }
+}
+
+.app-header {
+  width: 25rem;
+  @media screen and (max-width: 1080px) {
+    position: relative;
+    width: 100%;
+    min-height: 0;
+  }
+}
+
+.app-header-title {
+  font-size: 2rem;
+}
+
+.app-header-avatar {
+  border: .2rem solid #D3C6AA;
+}
+
+.app-header-menu-item {
+  text-decoration: underline;
+
+  &.selected {
+    color: #fafafa;
+  }
+}
+
+.app-header-social{
+  margin: 2rem 0 1rem;
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.app-header-lang {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  bottom: 1rem;
+  position: absolute;
+  left: 50%;
+  width: 10rem;
+  margin-left: -5rem;
+  .app-header-lang-item {
+    margin: 0 .5rem;
+    &.selected {
+      a {
+        color: #fafafa;
+      }
+    }
+  }
+  @media screen and (max-width: 1080px) {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0 0;
+    text-align: center;
+    left: auto;
+    bottom: auto;
+  }
+}
+
+.posts-list {
+  .posts-list-item {
+    border-bottom: 2px dashed #D3C6AA;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    .posts-list-item-link {
+      display: flex;
+      flex-direction: row;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+      .posts-list-item-thumbnail {
+        display: block;
+        width: 60rem;
+        background-size: cover;
+	      background-position: center;
+	      margin: 0 1rem 0 0;
+	      border-radius: 5px;
+	      &::before {
+		      content: "";
+		      display: block;
+		      padding-top: 70%;
+	      }
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          max-width: 20rem;
+	        margin: 0 0 1rem 0;
+        }
+      }
+      .posts-list-item-description {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &:last-child {
+      border: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+

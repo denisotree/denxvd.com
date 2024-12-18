@@ -1,0 +1,81 @@
+baseURL = "https://denxvd.com"
+title = "Denis Vdovin"
+theme = "hugo-theme-m10c"
+
+defaultContentLanguage = 'en'
+
+[languages]
+[languages.en]
+contentDir = 'content/en'
+disabled = false
+languageCode = 'en-US'
+languageDirection = 'ltr'
+languageName = 'EN'
+title = 'Blog'
+weight = 1
+[languages.en.menus]
+[[languages.en.menus.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 1
+[[languages.en.menus.main]]
+identifier = "tech"
+name = "Technologies"
+url = "/tech/"
+weight = 2
+[[languages.en.menus.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 3
+
+[languages.ru]
+contentDir = 'content/ru'
+disabled = false
+languageCode = 'ru-RU'
+languageDirection = 'ltr'
+languageName = 'RU'
+title = 'Блог'
+weight = 2
+[languages.ru.menus]
+[[languages.ru.menus.main]]
+identifier = "home"
+name = "Главная"
+url = "/ru/"
+weight = 1
+[[languages.ru.menus.main]]
+identifier = "tech"
+name = "Технологии"
+url = "/ru/tech/"
+weight = 2
+[[languages.ru.menus.main]]
+identifier = "about"
+name = "Обо мне"
+url = "/ru/about/"
+weight = 3
+
+[pagination]
+pagerSize = 8
+
+[params]
+author = "Denis Vdovin"
+description = "Senior Data Engineer & Data Analyst | Expert in Data Pipelines, Clickhouse, Apache Airflow, dbt, Python & SQL"
+menu_item_separator = " | "
+favicon = "/favicon.ico"
+
+[[params.social]]
+icon = "brand-github"
+name = "Github"
+url = "https://github.com/denisotree"
+[[params.social]]
+icon = "brand-linkedin"
+name = "Linkedin"
+url = "https://www.linkedin.com/in/denisotree/"
+
+[params.style]
+darkestColor = "#3D484D"
+darkColor = "#343F44"
+lightColor = "#D3C6AA"
+lightestColor = "#fafafa"
+primaryColor = "#A7C080"
