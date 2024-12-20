@@ -133,6 +133,7 @@ article {
 
 .posts-list {
   .posts-list-item {
+    display: block;
     border-bottom: 2px dashed #D3C6AA;
     padding-bottom: 2rem;
     margin-bottom: 2rem;
@@ -143,8 +144,7 @@ article {
         flex-direction: column;
       }
       .posts-list-item-thumbnail {
-        display: block;
-        width: 60rem;
+        flex: 1 0 20rem;
         background-size: cover;
 	      background-position: center;
 	      margin: 0 1rem 0 0;
@@ -152,11 +152,12 @@ article {
 	      &::before {
 		      content: "";
 		      display: block;
+		      width: 100%;
 		      padding-top: 70%;
 	      }
         @media screen and (max-width: 768px) {
           width: 100%;
-          max-width: 20rem;
+          flex: auto;
 	        margin: 0 0 1rem 0;
         }
       }
