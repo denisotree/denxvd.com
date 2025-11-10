@@ -1,6 +1,6 @@
 ---
 title: Visidata - Installation and Environment Setup
-date: 2024-12-24T14:28:57
+date: 2024-12-24
 description: This article provides a complete guide to installing and setting up Visidata on your computer, along with tips to streamline the process and enhance environment control.
 tags:
   - visidata
