@@ -13,6 +13,13 @@ html, body, p, a, pre, code, div, span, h1, h2, h3, h4, hr, .app-header-title {
   max-width: 48rem;
 }
 
+// Smaller article title on phones (the 2rem default wraps to 1–2 words per line)
+.post-title {
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
 .post-content {
   line-height: 1.7;
 }
