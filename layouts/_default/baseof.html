@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<html lang="{{ .Site.Language.Locale }}" dir="{{ or .Site.Language.Direction "ltr" }}">
   <head>
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} // {{ .Site.Title }}{{ end }}</title>
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | default "/favicon.ico" }}" />
@@ -43,16 +43,17 @@
       </div>
       {{- end }}
       <ul class="app-header-lang">
-        {{ $siteLanguages := site.Languages}}
+        {{ $siteLanguages := slice }}
+        {{ range hugo.Sites }}{{ $siteLanguages = $siteLanguages | append .Language }}{{ end }}
         {{ $pageLang := .Page.Lang}}
         {{- range .Page.AllTranslations }}
         {{ $translation := . }}
         {{- range sort $siteLanguages "Weight" "asc" }}
         {{- if eq $translation.Lang .Lang }}
         {{ if eq $pageLang .Lang}}
-        <li class="app-header-lang-item selected"><a href="{{ $translation.Permalink | relURL }}">{{ .LanguageName }}</a></li>
+        <li class="app-header-lang-item selected"><a href="{{ $translation.Permalink | relURL }}">{{ .Label }}</a></li>
         {{ else }}
-        <li class="app-header-lang-item"><a href="{{ $translation.Permalink | relURL }}">{{ .LanguageName }}</a></li>
+        <li class="app-header-lang-item"><a href="{{ $translation.Permalink | relURL }}">{{ .Label }}</a></li>
         {{ end }}
         {{- end }}
         {{- end }}

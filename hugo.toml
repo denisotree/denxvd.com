@@ -8,9 +8,9 @@ defaultContentLanguage = 'en'
 [languages.en]
 contentDir = 'content/en'
 disabled = false
-languageCode = 'en-US'
-languageDirection = 'ltr'
-languageName = 'EN'
+locale = 'en-US'
+direction = 'ltr'
+label = 'EN'
 title = 'Blog'
 weight = 1
 [languages.en.menus]
@@ -33,9 +33,9 @@ weight = 3
 [languages.ru]
 contentDir = 'content/ru'
 disabled = false
-languageCode = 'ru-RU'
-languageDirection = 'ltr'
-languageName = 'RU'
+locale = 'ru-RU'
+direction = 'ltr'
+label = 'RU'
 title = 'Блог'
 weight = 2
 [languages.ru.menus]
