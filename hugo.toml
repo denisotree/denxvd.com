@@ -3,6 +3,7 @@ title = "Denis Vdovin"
 theme = "hugo-theme-m10c"
 
 defaultContentLanguage = 'en'
+enableRobotsTXT = true
 
 [languages]
 [languages.en]
