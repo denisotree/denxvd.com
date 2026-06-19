@@ -67,6 +67,11 @@ toLower = true
 name = 'tags'
 weight = 100
 
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+ordered = false
+
 [params]
 author = "Denis Vdovin"
 description = "Senior Data Engineer & Data Analyst | Expert in Data Pipelines, Clickhouse, Apache Airflow, dbt, Python & SQL"

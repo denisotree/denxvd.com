@@ -26,9 +26,18 @@
       </div>
       {{- end }}
     </header>
+
+    {{- if and (ne .Type "page") (ge (len (findRE "<h[23][ >]" .Content)) 5) }}
+    <details class="toc" open>
+      <summary>{{ cond $ru "Содержание" "Contents" }}</summary>
+      {{ .TableOfContents }}
+    </details>
+    {{- end }}
+
     <div class="post-content">
       {{ .Content }}
     </div>
+
     {{- if ne .Type "page" }}
     <div class="post-footer">
       <div class="post-share">
@@ -38,6 +47,7 @@
         <a href="{{ printf "https://t.me/share/url?%s" (querify "url" .Permalink "text" .Title) | safeURL }}" target="_blank" rel="noopener noreferrer">Telegram</a>
         <a href="{{ printf "https://news.ycombinator.com/submitlink?%s" (querify "u" .Permalink "t" .Title) | safeURL }}" target="_blank" rel="noopener noreferrer">HN</a>
       </div>
+
       {{- with first 3 (.Site.RegularPages.Related .) }}
       <div class="related">
         <h3>{{ cond $ru "Читать дальше" "Read next" }}</h3>
@@ -48,6 +58,19 @@
         </ul>
       </div>
       {{- end }}
+
+      <div class="author-bio">
+        <img class="author-bio-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" />
+        <div class="author-bio-text">
+          <strong>{{ .Site.Params.author }}</strong>
+          <p>{{ cond $ru "Senior Data Engineer и аналитик. Пишу про данные, терминал и инструменты, которые делаю сам." "Senior Data Engineer and analyst. I write about data, the terminal, and the tools I build myself." }}</p>
+          {{- with .Site.Params.social }}
+          <div class="author-bio-links">
+            {{- range . }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer me">{{ .name }}</a>{{ end }}
+          </div>
+          {{- end }}
+        </div>
+      </div>
     </div>
     {{- end }}
   </article>

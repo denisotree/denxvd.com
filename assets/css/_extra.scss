@@ -5,7 +5,12 @@ html, body, p, a, pre, code, div, span, h1, h2, h3, h4, hr, .app-header-title {
   font-weight: 400;
   font-style: normal;
   color: #D3C6AA;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+// More comfortable line length and spacing for long-form reading
+.post-content {
+  line-height: 1.7;
 }
 
 h1 {
@@ -109,6 +114,61 @@ code {
   }
 
   a {
+    text-decoration: underline;
+  }
+}
+
+// Table of contents (long posts)
+.toc {
+  margin: 0 0 2rem;
+  padding: 0.8rem 1.25rem;
+  background: #2D353B;
+  border: 1px solid #4D4C43;
+  border-radius: 6px;
+  font-size: 14px;
+
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.2rem;
+  }
+
+  li {
+    margin: 0.2rem 0;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+// Author bio (end of post)
+.author-bio {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed #4D4C43;
+
+  .author-bio-avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 0.15rem solid #D3C6AA;
+    flex: 0 0 auto;
+  }
+
+  .author-bio-text p {
+    margin: 0.3rem 0 0.5rem;
+  }
+
+  .author-bio-links a {
+    margin-right: 0.9rem;
     text-decoration: underline;
   }
 }
