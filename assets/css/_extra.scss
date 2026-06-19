@@ -9,8 +9,25 @@ html, body, p, a, pre, code, div, span, h1, h2, h3, h4, hr, .app-header-title {
 }
 
 // More comfortable line length and spacing for long-form reading
+.post {
+  max-width: 48rem;
+}
+
 .post-content {
   line-height: 1.7;
+}
+
+// In-prose links use the brand green for affordance
+.post-content a {
+  color: #A7C080;
+}
+
+// Let sections breathe
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
 }
 
 h1 {
