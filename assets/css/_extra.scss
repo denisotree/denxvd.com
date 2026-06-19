@@ -114,11 +114,28 @@ code {
     margin-right: 0.5rem;
     opacity: 0.7;
   }
+}
 
-  a {
-    margin-right: 0.9rem;
-    text-decoration: underline;
+// Subtle "chip" style shared by tags and share links — muted, on-palette
+.post-meta .tag,
+.post-footer .post-share a {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.05rem 0.55rem;
+  font-size: 0.85rem;
+  color: #D3C6AA;
+  border: 1px solid #4D4C43;
+  border-radius: 0.3rem;
+  text-decoration: none;
+
+  &:hover {
+    background: #2D353B;
   }
+}
+
+.post-meta .tag {
+  margin: 0.1rem 0.25rem 0.1rem 0;
+  font-size: 0.8rem;
 }
 
 .related {
