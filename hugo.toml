@@ -59,6 +59,14 @@ weight = 3
 [pagination]
 pagerSize = 8
 
+[related]
+includeNewer = true
+threshold = 60
+toLower = true
+[[related.indices]]
+name = 'tags'
+weight = 100
+
 [params]
 author = "Denis Vdovin"
 description = "Senior Data Engineer & Data Analyst | Expert in Data Pipelines, Clickhouse, Apache Airflow, dbt, Python & SQL"

@@ -1,0 +1,54 @@
+{{ define "main" }}
+  {{- $ru := eq .Site.Language.Lang "ru" -}}
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{- if ne .Type "page" }}
+      <div class="post-meta">
+        <div>
+          {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+          {{ .PublishDate.Format "Jan 2, 2006" }}
+        </div>
+        <div>
+          {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+          {{ .ReadingTime }} min read
+        </div>
+        {{- with .Params.tags }}
+        <div>
+          {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+          {{- range . -}}
+            {{ with $.Site.GetPage (printf "/%s/%s" "tags" . ) }}
+              <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
+            {{- end }}
+          {{- end }}
+        </div>
+        {{- end }}
+      </div>
+      {{- end }}
+    </header>
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+    {{- if ne .Type "page" }}
+    <div class="post-footer">
+      <div class="post-share">
+        <span class="post-share-label">{{ cond $ru "Поделиться:" "Share:" }}</span>
+        <a href="{{ printf "https://twitter.com/intent/tweet?%s" (querify "text" .Title "url" .Permalink) | safeURL }}" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="{{ printf "https://www.linkedin.com/sharing/share-offsite/?%s" (querify "url" .Permalink) | safeURL }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="{{ printf "https://t.me/share/url?%s" (querify "url" .Permalink "text" .Title) | safeURL }}" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="{{ printf "https://news.ycombinator.com/submitlink?%s" (querify "u" .Permalink "t" .Title) | safeURL }}" target="_blank" rel="noopener noreferrer">HN</a>
+      </div>
+      {{- with first 3 (.Site.RegularPages.Related .) }}
+      <div class="related">
+        <h3>{{ cond $ru "Читать дальше" "Read next" }}</h3>
+        <ul>
+          {{- range . }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+  </article>
+{{ end }}
