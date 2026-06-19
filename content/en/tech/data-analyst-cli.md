@@ -22,7 +22,7 @@ P.S. While this article is primarily intended for beginners, experienced analyst
 
 ## Why Spend Time on This?
 
-![](/tech/data-analyst-cli/photo_2024-12-20_15-45-26.jpg)
+![Command-line tools for data professionals](/tech/data-analyst-cli/photo_2024-12-20_15-45-26.jpg)
 
 Working in the command line can seem challenging, especially if you’re accustomed to graphical interfaces. However, the terminal offers several undeniable advantages:
 

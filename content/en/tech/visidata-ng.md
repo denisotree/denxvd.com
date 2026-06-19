@@ -17,7 +17,7 @@ DisableComments: true
 draft: false
 ---
 
-![](/tech/visidata-ng/visidata-ng.jpg)
+![Visidata NG — my Visidata fork](/tech/visidata-ng/visidata-ng.jpg)
 
 I’m a long-time fan of [Visidata](https://github.com/saulpw/visidata). I initially planned to contribute directly upstream, but getting changes accepted can take time, while I wanted to use them myself and share sooner. That’s why I created a fork called Visidata NG (new generation). I’m developing it independently and proposing the most promising changes upstream in parallel.
 

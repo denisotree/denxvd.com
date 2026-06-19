@@ -17,7 +17,7 @@ DisableComments: true
 draft: false
 ---
 
-![](/tech/visidata-ng/visidata-ng.jpg)
+![Visidata NG — мой форк Visidata](/tech/visidata-ng/visidata-ng.jpg)
 
 Я люблю [Visidata](https://github.com/saulpw/visidata) и изначально хотел контрибьютить прямо в основной проект. Но процесс принятия изменений не всегда быстрый, а пользоваться улучшениями хотелось уже сейчас — и поделиться ими с другими. Поэтому я сделал форк под названием Visidata NG (new generation) и развиваю его параллельно, предлагая самые удачные изменения в основной репозиторий.
 

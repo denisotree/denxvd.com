@@ -16,7 +16,7 @@ DisableComments: true
 draft: false
 ---
 
-![](/tech/visidata-install/visidata-install.jpg)
+![Installing and configuring Visidata](/tech/visidata-install/visidata-install.jpg)
 
 **Visidata** is a powerful terminal-based tool for working with tabular data. It allows for quick data analysis, filtering, and transformation with minimal resource usage. Learn more about it [here]({{< relref "visidata" >}}).
 

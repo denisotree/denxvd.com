@@ -19,7 +19,7 @@ DisableComments: true
 draft: false
 ---
 
-![](/tech/veles/veles.jpg)
+![Veles TUI showing an answer grounded in the project's memory](/tech/veles/veles.jpg)
 
 [Veles](https://github.com/denisotree/veles) — a minimal multi-agent framework that keeps structured memory for every project and gets more useful with every session. It runs right in your terminal, works with any LLM provider — cloud or local — and accumulates knowledge, skills, and tools as you go. I built it first and foremost for myself: I work with LLMs a lot, and a recurring problem is that the whole conversation doesn’t fit in the context window — and after compaction the model forgets important insights, so you keep reminding it of the rules, events, and documents and rebuilding context. I wanted a framework that helps agents remember my decisions, stores memory well, and — if I want — runs entirely on a local model, without being tied to a single vendor.
 
@@ -45,7 +45,7 @@ Some off-the-shelf tools cover one piece but not all of it at once. Others — l
 1. **Memory that compounds**  
    This is the headline feature. After every session the Curator distills it into insights, rules, and digests that live in `.veles/` right inside the project. From there the agent recalls relevant facts and past decisions on its own — you stop cycling through the same context. Insight extraction catches phrases like “always do X” or “never do Y” and saves them as persistent project rules.
 
-   ![](/tech/veles/tui-hero.gif)
+   ![Veles: asking a question in the TUI and getting an answer from the project's memory](/tech/veles/tui-hero.gif)
 
 2. **Any provider, no vendor lock-in**  
    OpenRouter, Anthropic, OpenAI, Gemini, Ollama, llamacpp, or your `claude` / `gemini` CLI subscription — no API key needed. Different task types can route to different models: planning to a stronger model, compression and insight extraction to a cheaper one.
@@ -68,7 +68,7 @@ Some off-the-shelf tools cover one piece but not all of it at once. Others — l
    veles run "What do we know about the authentication design?"
    ```
 
-   ![](/tech/veles/kb-ingest.gif)
+   ![Veles ingesting a source into the LLM wiki, then citing it in an answer](/tech/veles/kb-ingest.gif)
 
 5. **Skills and tools that accumulate**  
    A skill is a reusable prompt-block (`SKILL.md`) that automatically becomes an agent tool. A good skill can be “promoted” from a project to user-global — and then it’s available everywhere. Built-in dedup finds near-duplicate skills before they multiply.
@@ -76,12 +76,12 @@ Some off-the-shelf tools cover one piece but not all of it at once. Others — l
 6. **A TUI with modes**  
    `veles tui` opens an interactive REPL. Slash commands surface everything live — `/status`, `/tokens`, `/context` — and `Shift+Tab` cycles modes (auto / planning / writing / goal).
 
-   ![](/tech/veles/tui-tour.gif)
+   ![Veles TUI tour: slash commands and switching modes](/tech/veles/tui-tour.gif)
 
 7. **Daemon and channels**  
    Veles can run as a persistent daemon with an HTTP/WS API that external channels connect to — messengers like Telegram or Slack, or your own integrations. Telegram works out of the box: put a bot on top and chat with your project’s agent right from your phone, with a persistent session per user. Other channels are easy to build on top of the same API.
 
-   ![](/tech/veles/tui-daemon.gif)
+   ![Veles TUI daemon and channels control panel](/tech/veles/tui-daemon.gif)
 
 8. **Long-running tasks**  
    When a task takes more than one pass, there are goals with a budget, scheduled jobs, and multi-step research.

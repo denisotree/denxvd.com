@@ -36,7 +36,7 @@ draft: false
 5. **Advanced Aggregation Tools**  
    VisiData also shines with its aggregation features. You can group data by any column just by pressing `Shift+F`. By default, it will display a `count` aggregation with percentages and a histogram, but you can add nearly any aggregation function you need. You can even create a pivot table with the `Shift+W` shortcut:
 
-   ![](/tech/visidata/photo_2024-12-18_11-06-18.jpg)  
+   ![Pivot table in Visidata: singles released per artist by year](/tech/visidata/photo_2024-12-18_11-06-18.jpg)  
    Here, we’ve quickly calculated the number of singles released by each artist per year. For example, you can see Bruno Mars and Coldplay had notable comebacks after 10 and 6 years, respectively.
 
 6. **Table Joins**  

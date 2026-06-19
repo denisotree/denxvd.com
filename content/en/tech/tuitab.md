@@ -18,7 +18,7 @@ DisableComments: true
 draft: false
 ---
 
-![](/tech/tuitab/tuitab.jpg)
+![tuitab showing a CSV table in the terminal with column type icons](/tech/tuitab/tuitab.jpg)
 
 [tuitab](https://github.com/denisotree/tuitab) — a fast, powerful browser for tabular data that runs right in your terminal. Written in Rust. It works with CSV, TSV, JSON, Parquet, Excel, SQLite, and DuckDB out of the box (and I can write new connectors on request) and lets you filter, sort, build pivot tables, run JOINs, compute new columns, and draw charts without taking your hands off the keyboard. I built it first and foremost for myself, because I love data analysis and I love the terminal. I love being able to dive into data fast, look at every segment I care about, and test simple hypotheses — without spinning up Jupyter or writing a million SQL queries.
 
@@ -62,20 +62,20 @@ So I built tuitab in Rust on top of [Polars](https://www.pola.rs) — which gave
 4. **Instant analysis: statistics, frequencies, charts**  
    Press `I` for a per-column summary (count, nulls, unique, min/max, mean, median, mode, standard deviation, and quantiles). `F` builds a frequency table, and `V` draws a chart right in the terminal: numeric columns get a smart histogram (Freedman–Diaconis rule), categorical ones get a frequency bar chart. Pin a date or category column first, and you get line and grouped charts.
 
-   ![](/tech/tuitab/charts.gif)
+   ![Drawing charts in tuitab: histogram and bar chart rendered in the terminal](/tech/tuitab/charts.gif)
 
 5. **Pivot tables, JOINs, and computed columns**  
    This is the stuff you’d usually open Python for. In tuitab a pivot works like this: pin the columns to group by, put the cursor on the column you want to spread across, press `W`, and type an aggregation formula such as `sum(revenue)`.
 
-   ![](/tech/tuitab/pivot.gif)
+   ![Building a pivot table in tuitab with a sum(revenue) aggregation](/tech/tuitab/pivot.gif)
 
    `J` launches a step-by-step JOIN wizard: pick the second file (or an already-open sheet), the type `INNER` / `LEFT` / `RIGHT` / `OUTER`, and the key columns.
 
-   ![](/tech/tuitab/join.gif)
+   ![JOIN wizard in tuitab: picking the file, join type, and key columns](/tech/tuitab/join.gif)
 
    And with `=` you can add a computed column from an expression — arithmetic, string and date functions, and conditionals are all supported. The new column appears right next to the cursor.
 
-   ![](/tech/tuitab/compute.gif)
+   ![Adding a computed column from an expression in tuitab](/tech/tuitab/compute.gif)
 
 6. **Column types: currency, percentages, dates**  
    With `t` you can set a column’s type: string, integer, float, date, datetime, boolean, percentage, currency, or file size. For currency it immediately offers `USD · EUR · GBP · JPY` and formats the values with the right symbol. Interestingly, these are the exact things I once added to the visidata fork by hand — here I made them built-in, along with a quick “percent of total” via `zf`.
