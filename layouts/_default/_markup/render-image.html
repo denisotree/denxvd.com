@@ -1,0 +1,5 @@
+{{- /* Lazy-load every image except the first (the cover is the LCP element) */ -}}
+{{- $lazy := gt .Ordinal 0 -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}"
+  {{- with .Title }} title="{{ . }}"{{ end }}
+  {{- if $lazy }} loading="lazy" decoding="async"{{ else }} fetchpriority="high"{{ end }} />
