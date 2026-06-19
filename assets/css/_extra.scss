@@ -37,6 +37,42 @@ code {
   padding: 0.2rem;
 }
 
+// Code blocks (Chroma): padding, rounded corners, horizontal scroll, copy button
+.highlight {
+  position: relative;
+
+  pre {
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+
+  code {
+    background: none;
+    padding: 0;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    font-family: "Fira Code", monospace;
+    font-size: 0.75rem;
+    color: #D3C6AA;
+    background: #3D484D;
+    border: 1px solid #4D4C43;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  &:hover .copy-btn { opacity: 1; }
+  .copy-btn:hover { background: #4D4C43; }
+  .copy-btn.copied { color: #A7C080; }
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
