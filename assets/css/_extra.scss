@@ -30,6 +30,26 @@ html, body, p, a, pre, code, div, span, h1, h2, h3, h4, hr, .app-header-title {
   margin-bottom: 0.6rem;
 }
 
+// Anchor links on headings (appear on hover, for sharing a section)
+.post-content .heading-anchor {
+  opacity: 0;
+  margin-left: 0.4rem;
+  color: #A7C080;
+  text-decoration: none;
+  font-weight: 400;
+  transition: opacity 0.15s ease;
+}
+
+.post-content h2:hover .heading-anchor,
+.post-content h3:hover .heading-anchor,
+.post-content h4:hover .heading-anchor {
+  opacity: 0.6;
+}
+
+.post-content .heading-anchor:hover {
+  opacity: 1;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: 600;
@@ -344,6 +364,7 @@ article {
 	      background-position: center;
 	      margin: 0 1rem 0 0;
 	      border-radius: 5px;
+	      border: 1px solid #4D4C43;
 	      &::before {
 		      content: "";
 		      display: block;
