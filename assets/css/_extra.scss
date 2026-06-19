@@ -177,6 +177,11 @@ code {
   }
 }
 
+// Breathing room after the title/meta block, before the TOC or content
+.post-meta {
+  margin-bottom: 2rem;
+}
+
 // Table of contents (long posts)
 .toc {
   margin: 0 0 2rem;
