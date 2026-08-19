@@ -24,6 +24,8 @@ draft: false
 
 I’ve already [written]({{< relref "visidata" >}}) that VisiData is one of my favorite tools, and I even [made my own fork]({{< relref "visidata-ng" >}}) to add the features I was missing faster. But at some point I hit a ceiling and decided to build my own from scratch. In this article I’ll explain why that happened, what tuitab can do, and how you can give it a quick try.
 
+P.S. This article was written at version `0.4.x`. Five releases have shipped since — what changed is in the [follow-up](/tech/tuitab-0-9/): the MCP server, editable databases, and window functions.
+
 ---
 
 ### Why I Didn’t Stop at a VisiData Fork
