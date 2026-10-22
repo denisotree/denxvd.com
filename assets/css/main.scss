@@ -1,0 +1,25 @@
+// Override of the theme's main.scss: the same stylesheet on the Sass module system (@use)
+// instead of the deprecated @import. Modules don't see the caller's variables, so the
+// palette lives in _vars.scss, and the theme partials that read it are overridden here
+// (_base.scss, components/_app.scss, _pagination.scss, _post.scss). The other partials
+// are loaded from the theme unchanged.
+@use 'vars' with (
+  $darkest-color: {{ .Site.Params.style.darkestColor | default "#242930" }},
+  $dark-color: {{ .Site.Params.style.darkColor | default "#353b43" }},
+  $light-color: {{ .Site.Params.style.lightColor | default "#afbac4" }},
+  $lightest-color: {{ .Site.Params.style.lightestColor | default "#ffffff" }},
+  $primary-color: {{ .Site.Params.style.primaryColor | default "#57cc8a" }}
+);
+
+@use 'base';
+
+@use 'components/app';
+@use 'components/error_404';
+@use 'components/icon';
+@use 'components/pagination';
+@use 'components/post';
+@use 'components/posts_list';
+@use 'components/tag';
+@use 'components/tags_list';
+
+@use 'extra';
