@@ -15,7 +15,7 @@ hugo --minify             # production build into public/ (git-ignored)
 hugo new content/en/tech/<slug>.md   # scaffold a new post from archetypes/default.md
 ```
 
-The theme is a **git submodule**. After a fresh clone: `git submodule update --init --recursive`. Local Hugo is `extended` (required — the build compiles SCSS).
+The theme is a **git submodule**. After a fresh clone: `git submodule update --init --recursive`. The build compiles SCSS with Dart Sass (`css.Sass` with `transpiler: dartsass`), so the `sass` binary must be on `PATH`; CI installs it via snap.
 
 ## Deployment
 

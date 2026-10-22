@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
     {{ partial "seo.html" . }}
-    {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | css.Sass | resources.Minify | resources.Fingerprint -}}
+    {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | css.Sass (dict "transpiler" "dartsass") | resources.Minify | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     {{ with .OutputFormats.Get "rss" -}}
     {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
