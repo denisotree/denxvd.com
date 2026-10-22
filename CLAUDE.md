@@ -19,7 +19,7 @@ The theme is a **git submodule**. After a fresh clone: `git submodule update --i
 
 ## Deployment
 
-Push to `master` → GitHub Actions (`.github/workflows/hugo.yml`) builds with **Hugo 0.128.0 extended** and deploys to GitHub Pages. There is no manual deploy step and no preview environment; merging to `master` publishes. The CI Hugo version is pinned independently of your local version — keep features compatible with 0.128.0.
+Push to `master` → GitHub Actions (`.github/workflows/hugo.yml`) builds with **Hugo 0.168.0 extended** and deploys to GitHub Pages. There is no manual deploy step and no preview environment; merging to `master` publishes. The CI Hugo version is pinned independently of your local version — keep features compatible with 0.168.0.
 
 ## Writing voice
 
